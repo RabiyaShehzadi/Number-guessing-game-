@@ -1,0 +1,43 @@
+#include<iostream>
+#include<stdlib.h>
+#include<time.h>
+using namespace std;
+int main()
+{
+	int attempt=1;
+	int random,guess;
+    srand(time(0));
+	random=rand()%30+1;
+	cout<<"\t\t******************************************************************************************"<<endl;
+	cout<<"\t\t|                        WELCOME TO NUMBER GUESSING GAME                                 |"<<endl;
+    cout<<"\t\t******************************************************************************************"<<endl;
+    cout<<endl;
+    cout<<"Guess the number between 1 to 30 \n"<<endl;
+	cout<<"Enter your guess:";
+	cin>>guess;
+	while(guess!=random)
+	{
+		if((guess>=random-5)&&(guess<=random+5)){
+	
+		cout<<"Guess is too high!! "<<endl;
+	//	cout<<"Enter your guess:";
+	//	cin>>guess;
+	}
+		else
+		{
+			cout<<"Guess is too low!!"<<endl;
+		}
+		cout<<"Enter your guess:";
+	    cin>>guess;
+	    attempt++;
+}
+	if(guess==random)
+		{
+		cout<<"  CONGRATULATIONS !!!"<<endl;
+	   }
+	if (attempt<=10)
+	cout<<" Bravo! You guess the number just in "<<attempt<<" attempts."<<endl;
+	else
+	cout<<"You take too attempts ("<<attempt<<") to guess the number!!"<<endl;
+	return 0;
+}
